@@ -92,10 +92,10 @@ expectation_module <- enw_expectation(
 
 ## Define Reference Date Model
 
-This model assumes an exponential reporting delay.
+This model assumes a log-normal reporting delay.
 
 ```{r}
-reference_module <- enw_reference(~ 1, distribution = "exponential", data = pobs)
+reference_module <- enw_reference(~ 1, data = pobs)
 ```
 
 ## Define Report Date Model

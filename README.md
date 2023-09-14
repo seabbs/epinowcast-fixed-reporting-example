@@ -128,10 +128,10 @@ expectation_module <- enw_expectation(
 
 ## Define Reference Date Model
 
-This model assumes an exponential reporting delay.
+This model assumes a log-normal reporting delay.
 
 ``` r
-reference_module <- enw_reference(~ 1, distribution = "exponential", data = pobs)
+reference_module <- enw_reference(~ 1, data = pobs)
 ```
 
 ## Define Report Date Model
@@ -171,7 +171,7 @@ nowcast <- epinowcast(pobs,
 > You may see warning messages from early in the sampling process. These
 > are due to trying to fit the model to days with zero reports despite
 > the fact that we have hardcoded the reporting day effects to be zero.
-> These warnings will be removed once we implement the ability to skip
+> These warnings will be mitigated once we implement the ability to skip
 > days with zero reports.
 
 ## Visualizations
