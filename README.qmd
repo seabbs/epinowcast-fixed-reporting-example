@@ -1,5 +1,5 @@
 ---
-format: github
+format: gfm
 ---
 
 # Adapting `{epinowcast}` to have a fixed reporting schedule
@@ -38,6 +38,15 @@ We load in the synthetic data from `data` that we generated in `data-raw/synthet
 ```{r}
 rt_synth_data <- fread("data/synthetic-weekly-data.csv")
 latest_synth_data <- fread("data/latest-synthetic-weekly-data.csv")
+```
+
+## Filter the latest data for the period we are nowcasting
+
+```{r}
+filt_latest_synth_data <- enw_filter_reference_dates(
+  latest_synth_data,
+  remove_days = 40, include_days = 40
+)
 ```
 
 ## Preprocess Observations
@@ -120,7 +129,7 @@ nowcast <- epinowcast(pobs,
 ### Nowcast of Observed Values
 
 ```{r}
-plot(nowcast, latest_synth_data)
+plot(nowcast, filt_latest_synth_data)
 ```
 
 ### Reproduction Number Estimates
@@ -190,7 +199,7 @@ exp_cases <- cbind(
   exp_cases
 )
 
-exp_cases <- enw_latest_data(nat_germany_hosp)[, date := reference_date][
+exp_cases <- data.table::copy(latest_synth_data)[, date := reference_date][
   exp_cases,
   on = "date"
 ]

@@ -50,10 +50,5 @@ retro_nat_germany <- enw_filter_reference_dates(
 latest_obs <- nat_germany_hosp[day_of_week %in% "Thu"] |>
   enw_latest_data()
 
-latest_obs <- enw_filter_reference_dates(
-  latest_obs,
-  remove_days = 40, include_days = 40
-)
-
 fwrite(retro_nat_germany, here("data", "synthetic-weekly-data.csv"))
 fwrite(latest_obs, here("data", "latest-synthetic-weekly-data.csv"))
