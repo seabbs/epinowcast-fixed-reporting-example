@@ -45,7 +45,7 @@ latest_synth_data <- fread("data/latest-synthetic-weekly-data.csv")
 ```{r}
 filt_latest_synth_data <- enw_filter_reference_dates(
   latest_synth_data,
-  remove_days = 40, include_days = 40
+  remove_days = 40, include_days = 60
 )
 ```
 
@@ -54,7 +54,7 @@ filt_latest_synth_data <- enw_filter_reference_dates(
 As for all uses of `{epinowcast}` we need to first preprocess the data.
 
 ```{r}
-pobs <- enw_preprocess_data(rt_synth_data, max_delay = 28)
+pobs <- enw_preprocess_data(rt_synth_data, max_delay = 35)
 ```
 
 ## Compile Nowcasting Model
@@ -78,7 +78,7 @@ This model includes:
 
 ```{r}
 expectation_module <- enw_expectation(
-  r = ~ 0 + (1 | day),
+  r = ~ 1 + rw(week),
   generation_time = c(0.1, 0.4, 0.4, 0.1),
   observation = ~ (1 | day_of_week),
   latent_reporting_delay = c(0.05, 0.3, 0.6, 0.05),
@@ -88,11 +88,11 @@ expectation_module <- enw_expectation(
 
 ## Define Reference Date Model
 
-This model uses a log-normal distribution reporting delay.
+This model assumes a non-parametric reporting process with a random effect on the week of the delay.
 
 ```{r}
 reference_module <- enw_reference(
-  parametric = ~ 1, non_parametric = ~ 0, data = pobs
+  parametric = ~ 0, non_parametric = ~ 1 + (1 | delay_week), data = pobs
 )
 ```
 
@@ -115,10 +115,15 @@ nowcast <- epinowcast(pobs,
   report = report_module,
   fit = enw_fit_opts(
     save_warmup = FALSE, pp = TRUE,
+    # Warning: I have 16 cores and so this setting is fine for me
+    # but you need to change it if you have fewer cores (or more!)
+    # so that chains * threads_per_chain = your number of cores
+    # of cores.
     chains = 4, threads_per_chain = 4,
     parallel_chains = 4,
     iter_warmup = 1000, iter_sampling = 1000,
     adapt_delta = 0.95,
+    show_messages = interactive()
   ),
   model = model
 )
@@ -129,7 +134,7 @@ nowcast <- epinowcast(pobs,
 ### Nowcast of Observed Values
 
 ```{r}
-plot(nowcast, filt_latest_synth_data)
+plot(nowcast, filt_latest_synth_data) 
 ```
 
 ### Reproduction Number Estimates

@@ -18,9 +18,21 @@ nat_germany_hosp <- enw_complete_dates(
   by = c("location", "age_group")
 )
 
+# Add incidence
+nat_germany_hosp <- nat_germany_hosp |>
+  enw_add_incidence()
+
 # Rewrite the following to use nat_germany_hosp
 # Make a day of week indicator
 nat_germany_hosp[, day_of_week := lubridate::wday(report_date, label = TRUE)]
+
+# Take a 7 day rolling sum of reports to get the number reported weekly by day
+nat_germany_hosp <- nat_germany_hosp[, confirm := new_confirm] |>
+  # Here we use an internal epinowcast function for ease that is hard
+  # coded to sum confirm
+  epinowcast:::aggregate_rolling_sum(
+    internal_timestep = 7, by = "reference_date"
+  )
 
 # Set all reports that aren't on a Thursday to be zero
 nat_germany_hosp[, confirm := ifelse(
@@ -36,6 +48,11 @@ nat_germany_hosp[, not_thursday := ifelse(
   0
 )]
 
+# Update cumulative reported cases from incidence
+nat_germany_hosp <- nat_germany_hosp[,
+ confirm := cumsum(confirm), by = "reference_date"
+]
+
 # Make a retrospective dataset
 retro_nat_germany <- enw_filter_report_dates(
   nat_germany_hosp,
@@ -43,7 +60,7 @@ retro_nat_germany <- enw_filter_report_dates(
 )
 retro_nat_germany <- enw_filter_reference_dates(
   retro_nat_germany,
-  include_days = 40
+  include_days = 60
 )
 
 # Get latest observations for the same time period
