@@ -14,12 +14,15 @@ I have data that has a fixed reporting schedule (for example it is reported week
 
 > Before doing this note that we also have the option of pretending we do not know the fixed reporting schedule and so need to learn it from the data. This should work but it will likely not be very efficient. If you want to try this load the default `{epinowcast}` model in `main.R` rather than the adapted one.
 
+We can do this by hardcoding the reporting day effects (`rep_beta`) to be 0 (or a very small number in fact as on the logit scale). When combined with a reporting model that identifies days that aren't the reporting day this will have the effect of encoding the reporting schedule in the model.
+
+> We could do better than this by modifying the likelihood to skip days with zero reports as these actually contain no information once the above change is in place. For this example we will not do this but this will be the approach taken once this feature is implemented in `{epinowcast}`.
 
 ## Getting setup with this example
 
 1. Clone this repository
-2. Open an R session in the root of the repository. `renv` should handle installing the dependencies.
-3. Make sure you have `cmdstan` installed (for example via `cmdstanr::install_cmdstan()`).
+2. Open an R session in the root of the repository. `renv` should handle installing the dependencies. Note that this example was developed using [`epinowcast#58da6aa`](https://github.com/epinowcast/epinowcast/tree/58da6aabb392e224b9ae341439c28719a1dde6d7).
+3. Make sure you have `cmdstan` installed (for example via `cmdstanr::install_cmdstan()`). Note that this example was developed using `v2.33.1`.
 4. Either run through this `README` interactively or render it using `quarto`.
 
 ## Load Packages
@@ -71,10 +74,11 @@ model <- enw_model(
 ## Define Expectation Model
 
 This model includes:
-- A random walk on the log of expected cases.
-- A generation time with probability mass spread over 4 days.
-- A latent reporting delay representing the incubation period and assumed ascertainment.
-- A day of the week reporting effect.
+
+* A random walk on the log of expected cases.
+* A generation time with probability mass spread over 4 days.
+* A latent reporting delay representing the incubation period and assumed ascertainment.
+* A day of the week reporting effect.
 
 ```{r}
 expectation_module <- enw_expectation(
@@ -91,9 +95,7 @@ expectation_module <- enw_expectation(
 This model assumes a non-parametric reporting process with a random effect on the week of the delay.
 
 ```{r}
-reference_module <- enw_reference(
-  parametric = ~ 0, non_parametric = ~ 1 + (1 | delay_week), data = pobs
-)
+reference_module <- enw_reference(~ 1, data = pobs)
 ```
 
 ## Define Report Date Model
@@ -109,6 +111,8 @@ report_module <- enw_report(~ not_thursday, data = pobs)
 We'll fit the model with the modules defined above and produce a nowcast.
 
 ```{r}
+# | echo: true
+# | output: false
 nowcast <- epinowcast(pobs,
   expectation = expectation_module,
   reference = reference_module,
@@ -122,8 +126,7 @@ nowcast <- epinowcast(pobs,
     chains = 4, threads_per_chain = 4,
     parallel_chains = 4,
     iter_warmup = 1000, iter_sampling = 1000,
-    adapt_delta = 0.95,
-    show_messages = FALSE, refresh = 0
+    adapt_delta = 0.96
   ),
   model = model
 )
