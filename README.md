@@ -148,7 +148,7 @@ nowcast <- epinowcast(pobs,
     parallel_chains = 4,
     iter_warmup = 1000, iter_sampling = 1000,
     adapt_delta = 0.95,
-    show_messages = interactive()
+    show_messages = FALSE, refresh = 0
   ),
   model = model
 )
@@ -156,25 +156,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 1 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 1 
-
-    Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -184,25 +170,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 1 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 1 
-
-    Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -212,25 +184,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 1 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 1 
-
-    Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -240,11 +198,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -254,11 +212,67 @@ nowcast <- epinowcast(pobs,
 
     Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 1 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 1 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 1 
+
+    Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 1 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 1 
+
+    Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 1 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 1 
+
+    Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 1 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 1 
+
+    Chain 1 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 1 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 1 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 1 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -268,25 +282,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 2 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 2 
-
-    Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -296,25 +296,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 2 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 2 
-
-    Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -324,25 +310,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 2 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 2 
-
-    Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -352,11 +324,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -366,11 +338,67 @@ nowcast <- epinowcast(pobs,
 
     Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 2 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 2 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 2 
+
+    Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 2 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 2 
+
+    Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 2 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 2 
+
+    Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 2 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 2 
+
+    Chain 2 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 2 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 2 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 2 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -380,25 +408,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 3 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 3 
-
-    Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -408,25 +422,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 3 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 3 
-
-    Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -436,25 +436,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 3 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 3 
-
-    Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -464,11 +450,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -478,11 +464,53 @@ nowcast <- epinowcast(pobs,
 
     Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 3 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 3 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 3 
+
+    Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 3 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 3 
+
+    Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 3 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 3 
+
+    Chain 3 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 3 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 3 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 3 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -492,25 +520,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 4 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 4 
-
-    Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -520,25 +534,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 4 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 4 
-
-    Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -548,25 +548,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
-
-    Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
-
-    Chain 4 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
-
-    Chain 4 
-
-    Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
-
-    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
-
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
-
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -576,11 +562,11 @@ nowcast <- epinowcast(pobs,
 
     Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 
@@ -590,11 +576,67 @@ nowcast <- epinowcast(pobs,
 
     Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
 
-    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is -inf, but must be finite! (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 13, column 0) (in '/tmp/Rtmpm6pXMH/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
 
-    Chain 4 '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 17, column 0) (in '/tmp/Rtmpm6pXMH/model-3ad5d067ddb9c2.stan', line 398, column 6 to line 402, column 8)
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 4 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 4 
+
+    Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 4 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 4 
+
+    Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[1] is inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 4 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 4 
+
+    Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
+
+    Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+
+    Chain 4 but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+    Chain 4 
+
+    Chain 4 Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+
+    Chain 4 Exception: Exception: Exception: neg_binomial_2_log_lpmf: Log location parameter[2] is -inf, but must be finite! (in '/tmp/RtmpaPnUbN/include_1/stan/functions/obs_lpmf.stan', line 6, column 4, included from
+
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 13, column 0) (in '/tmp/RtmpaPnUbN/include_1/stan/functions/delay_lpmf.stan', line 22, column 2, included from
+
+    Chain 4 '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 17, column 0) (in '/tmp/RtmpaPnUbN/model-3aef08370f2e11.stan', line 398, column 6 to line 402, column 8)
 
     Chain 4 If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
 

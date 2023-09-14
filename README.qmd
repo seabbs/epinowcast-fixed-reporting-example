@@ -123,7 +123,7 @@ nowcast <- epinowcast(pobs,
     parallel_chains = 4,
     iter_warmup = 1000, iter_sampling = 1000,
     adapt_delta = 0.95,
-    show_messages = interactive()
+    show_messages = FALSE, refresh = 0
   ),
   model = model
 )
