@@ -162,7 +162,7 @@ transformed data{
   // Hard code the reporting effect to be no reporting
   // This has to be slightly above zero to avoid numeric 
   // issue caused by fitting to non-informative data (i.e. all zeros)
-  vector[rep_fncol] rep_beta = rep_vector(-25, rep_fncol);
+  vector[rep_fncol] rep_beta = rep_vector(-20, rep_fncol);
 }
 
 parameters {

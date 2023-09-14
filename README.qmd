@@ -92,15 +92,15 @@ expectation_module <- enw_expectation(
 
 ## Define Reference Date Model
 
-This model assumes a non-parametric reporting process with a random effect on the week of the delay.
+This model assumes an exponential reporting delay.
 
 ```{r}
-reference_module <- enw_reference(~ 1, data = pobs)
+reference_module <- enw_reference(~ 1, distribution = "exponential", data = pobs)
 ```
 
 ## Define Report Date Model
 
-This model accounts for the day of the week reporting effect using a binary indicator "not_thursday" which is present in our syntrhetic data.
+This model accounts for the day of the week reporting effect using a binary indicator `not_thursday` which is present in our syntrhetic data.
 
 ```{r}
 report_module <- enw_report(~ not_thursday, data = pobs)
@@ -111,8 +111,9 @@ report_module <- enw_report(~ not_thursday, data = pobs)
 We'll fit the model with the modules defined above and produce a nowcast.
 
 ```{r}
-# | echo: true
-# | output: false
+#| echo: true
+#| output: false
+
 nowcast <- epinowcast(pobs,
   expectation = expectation_module,
   reference = reference_module,
@@ -126,11 +127,13 @@ nowcast <- epinowcast(pobs,
     chains = 4, threads_per_chain = 4,
     parallel_chains = 4,
     iter_warmup = 1000, iter_sampling = 1000,
-    adapt_delta = 0.96
+    adapt_delta = 0.98
   ),
   model = model
 )
 ```
+
+> You may see warning messages from early in the sampling process. These are due to trying to fit the model to days with zero reports despite the fact that we have hardcoded the reporting day effects to be zero. These warnings will be mitigated once we implement the ability to skip days with zero reports.
 
 ## Visualizations
 
