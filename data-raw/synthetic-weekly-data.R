@@ -50,7 +50,7 @@ nat_germany_hosp[, not_thursday := ifelse(
 
 # Update cumulative reported cases from incidence
 nat_germany_hosp <- nat_germany_hosp[,
- confirm := cumsum(confirm), by = "reference_date"
+  confirm := cumsum(confirm), by = "reference_date"
 ] |>
   enw_add_incidence()
 
