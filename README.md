@@ -75,6 +75,16 @@ filt_latest_synth_data <- enw_filter_reference_dates(
 )
 ```
 
+## Create `.observed` indicator variable
+
+We need to tell the model which observations are observed and which are
+missing. We do this by creating a binary indicator variable `.observed`
+which is 1 for observed observations and 0 for missing observations.
+
+``` r
+rt_synth_data[, .observed := ifelse(day_of_week %in% "Thu", TRUE, FALSE)]
+```
+
 ## Preprocess Observations
 
 As for all uses of `{epinowcast}` we need to first preprocess the data.
@@ -104,7 +114,7 @@ model <- enw_model(
 
     Using model /home/seabbs/Dropbox/academic/projects/epinowcast-fixed-reporting-example/model.stan.
 
-    include is /home/seabbs/.cache/R/renv/cache/v5/R-4.3/x86_64-pc-linux-gnu/epinowcast/0.2.3.2000/642a461f38b2083f8c696a37edb32486/epinowcast/stan.
+    include is /home/seabbs/.cache/R/renv/cache/v5/R-4.3/x86_64-pc-linux-gnu/epinowcast/0.2.3.2000/905ab59ddd17bffdd247ed518a34e7c2/epinowcast/stan.
 
 ## Define Expectation Model
 
@@ -137,10 +147,23 @@ reference_module <- enw_reference(~ 1, data = pobs)
 ## Define Report Date Model
 
 This model accounts for the day of the week reporting effect using a
-binary indicator `not_thursday` which is present in our syntrhetic data.
+binary indicator `not_thursday` which is present in our synthetic data.
 
 ``` r
 report_module <- enw_report(~ not_thursday, data = pobs)
+```
+
+## Define the observation model
+
+We use a negative binomial observation model to account for
+overdispersion in the data. We also supply the model with the
+`.observed` indicate variable which we created using
+`enw_flag_observed_observations()`. This is used to tell the model which
+observations are observed and which are missing (here only days with
+reported cases are considered observed).
+
+``` r
+obs_module <- enw_obs(family = "negbin", data = pobs)
 ```
 
 ## Fit Nowcast Model
@@ -153,6 +176,7 @@ nowcast <- epinowcast(pobs,
   expectation = expectation_module,
   reference = reference_module,
   report = report_module,
+  obs = obs_module,
   fit = enw_fit_opts(
     save_warmup = FALSE, pp = TRUE,
     # Warning: I have 16 cores and so this setting is fine for me
@@ -162,17 +186,15 @@ nowcast <- epinowcast(pobs,
     chains = 4, threads_per_chain = 4,
     parallel_chains = 4,
     iter_warmup = 1000, iter_sampling = 1000,
-    adapt_delta = 0.98
+    adapt_delta = 0.99, max_treedepth = 12
   ),
   model = model
 )
 ```
 
-> You may see warning messages from early in the sampling process. These
-> are due to trying to fit the model to days with zero reports despite
-> the fact that we have hardcoded the reporting day effects to be zero.
-> These warnings will be mitigated once we implement the ability to skip
-> days with zero reports.
+> You may see warning messages from early in the warmup process. These
+> are due to them model being initialised far from the posterior. These
+> warnings will be mitigated once we implement improved initialisation.
 
 ## Visualizations
 
@@ -182,7 +204,7 @@ nowcast <- epinowcast(pobs,
 plot(nowcast, filt_latest_synth_data) 
 ```
 
-![](README_files/figure-commonmark/unnamed-chunk-10-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-12-1.png)
 
 ### Reproduction Number Estimates
 
@@ -208,7 +230,7 @@ ggplot(rt) +
   )
 ```
 
-![](README_files/figure-commonmark/unnamed-chunk-11-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-13-1.png)
 
 ### Expected Latent Cases
 
@@ -240,7 +262,7 @@ ggplot(latent_exp_cases) +
   )
 ```
 
-![](README_files/figure-commonmark/unnamed-chunk-12-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-14-1.png)
 
 ### Expected Reported Cases
 
@@ -274,7 +296,7 @@ ggplot(exp_cases) +
   )
 ```
 
-![](README_files/figure-commonmark/unnamed-chunk-13-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-15-1.png)
 
 ### Posterior Predictions by Report and Reference Date
 
@@ -288,4 +310,4 @@ plot(nowcast, type = "posterior") +
     `geom_line()`: Each group consists of only one observation.
     ℹ Do you need to adjust the group aesthetic?
 
-![](README_files/figure-commonmark/unnamed-chunk-14-1.png)
+![](README_files/figure-commonmark/unnamed-chunk-16-1.png)

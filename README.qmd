@@ -119,7 +119,7 @@ report_module <- enw_report(~ not_thursday, data = pobs)
 We use a negative binomial observation model to account for overdispersion in the data. We also supply the model with the `.observed` indicate variable which we created using `enw_flag_observed_observations()`. This is used to tell the model which observations are observed and which are missing (here only days with reported cases are considered observed).
 
 ```{r}
-obs_module <- enw_obs(family = "negbin", data = pobs)
+obs_module <- enw_obs(family = "negbin", observation_indicator = ".observed", data = pobs)
 ```
 
 ## Fit Nowcast Model
