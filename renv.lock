@@ -398,7 +398,7 @@
       "RemoteUsername": "epinowcast",
       "RemoteRepo": "epinowcast",
       "RemoteRef": "seabbs/issue33-likelihood-skipping",
-      "RemoteSha": "b498a62e9e0b89cd63bdedb379441cc488e6bc44",
+      "RemoteSha": "35c5acff3cb63c0cfe610366b06131cbe1446396",
       "Remotes": "stan-dev/cmdstanr, stan-dev/loo",
       "Requirements": [
         "R",
@@ -413,7 +413,7 @@
         "rstan",
         "scales"
       ],
-      "Hash": "905ab59ddd17bffdd247ed518a34e7c2"
+      "Hash": "dc53985827ba0c78455151bc142191dc"
     },
     "evaluate": {
       "Package": "evaluate",
