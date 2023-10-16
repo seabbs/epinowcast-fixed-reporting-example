@@ -143,7 +143,7 @@ nowcast <- epinowcast(pobs,
     chains = 4, threads_per_chain = 4,
     parallel_chains = 4,
     iter_warmup = 1000, iter_sampling = 1000,
-    adapt_delta = 0.99, max_treedepth = 12
+    adapt_delta = 0.98, max_treedepth = 12
   ),
   model = model
 )

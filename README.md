@@ -114,7 +114,7 @@ model <- enw_model(
 
     Using model /home/seabbs/Dropbox/academic/projects/epinowcast-fixed-reporting-example/model.stan.
 
-    include is /home/seabbs/.cache/R/renv/cache/v5/R-4.3/x86_64-pc-linux-gnu/epinowcast/0.2.3.2000/905ab59ddd17bffdd247ed518a34e7c2/epinowcast/stan.
+    include is /home/seabbs/.cache/R/renv/cache/v5/R-4.3/x86_64-pc-linux-gnu/epinowcast/0.2.3.2000/dc53985827ba0c78455151bc142191dc/epinowcast/stan.
 
 ## Define Expectation Model
 
@@ -163,7 +163,7 @@ observations are observed and which are missing (here only days with
 reported cases are considered observed).
 
 ``` r
-obs_module <- enw_obs(family = "negbin", data = pobs)
+obs_module <- enw_obs(family = "negbin", observation_indicator = ".observed", data = pobs)
 ```
 
 ## Fit Nowcast Model
@@ -186,7 +186,7 @@ nowcast <- epinowcast(pobs,
     chains = 4, threads_per_chain = 4,
     parallel_chains = 4,
     iter_warmup = 1000, iter_sampling = 1000,
-    adapt_delta = 0.99, max_treedepth = 12
+    adapt_delta = 0.98, max_treedepth = 12
   ),
   model = model
 )
