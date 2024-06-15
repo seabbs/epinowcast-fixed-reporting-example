@@ -25,11 +25,9 @@ combined with a reporting model that identifies days that aren’t the
 reporting day this will have the effect of encoding the reporting
 schedule in the model.
 
-> We could do better than this by modifying the likelihood to skip days
-> with zero reports as these actually contain no information once the
-> above change is in place. For this example we will not do this but
-> this will be the approach taken once this feature is implemented in
-> `{epinowcast}`.
+> We can hopefully do one better here by modifying the likelihood to
+> skip days with zero reports as these contain no information once the
+> above change is in place.
 
 ## Getting setup with this example
 
